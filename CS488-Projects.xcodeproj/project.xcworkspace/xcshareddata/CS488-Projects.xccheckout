@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D0DCA18D-009B-4FE1-9D80-E0A1A9BA2C67</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CS488-Projects</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3EFE80D07C6D511B48A00639ED3230E5B1A988B7</key>
+		<string>https://bitbucket.org/isohedral/cs488-fall-2015.git</string>
+		<key>75D697A81A383EA24004400E21CB4F2DDFE6EF8C</key>
+		<string>github.com:lvandeve/lodepng.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CS488-Projects.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3EFE80D07C6D511B48A00639ED3230E5B1A988B7</key>
+		<string>../..</string>
+		<key>75D697A81A383EA24004400E21CB4F2DDFE6EF8C</key>
+		<string>../../shared/lodepng</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/isohedral/cs488-fall-2015.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3EFE80D07C6D511B48A00639ED3230E5B1A988B7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3EFE80D07C6D511B48A00639ED3230E5B1A988B7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cs488-fall-2015</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>75D697A81A383EA24004400E21CB4F2DDFE6EF8C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>lodepng</string>
+		</dict>
+	</array>
+</dict>
+</plist>
