@@ -155,6 +155,7 @@ A3::A3(const std::string & luaSceneFile)
 	  m_particle_vbo(0),
 	  currMapIndex(0),
 	  depthMapFBO(0),
+	  isDepthMapDirty(true),
 	  accelFov(0),
 	  m_particles_pos_vbo(0),
 	  m_particles_col_vbo(0),
@@ -577,10 +578,11 @@ void A3::setupLight() {
 void A3::stepLight() {
 	if (distance(cameraPos, light_translate) > 5) {
 		light_translate = cameraPos;
+		l_view = lookAt(light_translate,
+			glm::vec3( 34.0f, -8.0f,  -16.0f) + light_translate,
+			glm::vec3( 0.0f, 1.0f,  0.0f));
+		isDepthMapDirty = true;
 	}
-	l_view = lookAt(light_translate,
-					glm::vec3( 34.0f, -8.0f,  -16.0f) + light_translate,
-					glm::vec3( 0.0f, 1.0f,  0.0f));
 }
 
 bool A3::isCrouching() {
@@ -1962,7 +1964,9 @@ bool A3::collide() {
 		}
 		currMap->hitBlock(i, j, k);
 		if (currMap->getHealth(i, j, k) < 0) {
+			// block destroyed
 			if (currMap->getBlock(i, j, k) < 0) {
+				// enemy destroyed
 				monstersKilled++;
 				life = std::min(MAX_LIFE, life + 1);
 			}
@@ -1972,6 +1976,7 @@ bool A3::collide() {
 			removeEntity(enemyBlocks, i, j, k);
 			removeEntity(transparentMapBlocks, i, j, k);
 			removeEntity(opaqueBlocks, i, j, k);
+			isDepthMapDirty = true;
 
 			playFarSoundClose(expSource, center);
 		}
@@ -2160,7 +2165,10 @@ static void updateShaderUniforms(
  * Called once per frame, after guiLogic().
  */
 void A3::draw() {
-	renderDepthMap();
+	if (isDepthMapDirty) {
+		renderDepthMap();
+		isDepthMapDirty = false;
+	}
 	if (show_shadow_map) {
 		renderQuad();
 	} else {

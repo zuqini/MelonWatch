@@ -87,6 +87,7 @@ protected:
 	void stepLight();
 	GLuint setupDepthTexture();
 	void renderDepthMap();
+	bool isDepthMapDirty;
 	GLuint depthMapFBO;
 	GLuint depthMap;
 	glm::vec3 light_translate;
